@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>experimento05</h1>
-    <input type="number" id="hora" placeholder="coloque aqui as horas " onchange="periodo()">
-    <button id="hora">Ver Hora</button>
-    <div>
-        <p>HORA:</p>
-</body>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scaled=1.0">
+        <title>Imagem</title>
+        <style>
+            img{
+                width: 300px;
+                height: 300px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Trocando Imagem</h1>
+        <img src="../imagens/verde.png" id="imagem" onmouseenter="trocar(this, '../imagens/vermelho.webp')" onmouseleave="trocar(this, '../imagens/verde.png')">
+
+        <script>
+            function trocar(imagemElement, novaImagem){
+                imagemElement.src = novaImagem 
+            }
+        </script>
+    </body>
 </html>
