@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scaled=1.0">
-        <title>Tabuada</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <span>Número:</span>
+    <input type="number" id="num" name="num">
+    <input type="button" id="bottom" name="bottom" onclick="valor()" value="resultado">
+    <p>Seu Resultado é:</p>
+    <p id="resultado"></p>
+    <script>
+        function valor(){
+            var n1 = Number(document.getElementById("num").value)
+            var res = document.getElementById("resultado")
+            res.innerHTML= '';
+            for(let c = 1; c<=10;c++){
+                var r= n1*c
+                res.innerHTML+=`<br>${n1}X${c}=${r}`
+                console.log(r)
+
+            }
+        }
+    </script>
+    
+</body>
+</html>
