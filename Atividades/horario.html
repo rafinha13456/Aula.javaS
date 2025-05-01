@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relógio com Saudação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    #mensagem {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Digite uma hora (0 a 23)</h1>
+  <input type="number" id="horaInput" min="0" max="23" placeholder="Ex: 14">
+  <button onclick="verificarSaudacao()">Verificar</button>
+
+  <div id="mensagem"></div>
+
+  <script>
+    function verificarSaudacao() {
+      const hora = parseInt(document.getElementById('horaInput').value);
+      const mensagem = document.getElementById('mensagem');
+
+      if (isNaN(hora) || hora < 0 || hora > 23) {
+        mensagem.textContent = 'Por favor, insira uma hora válida entre 0 e 23.';
+        return;
+      }
+
+      let saudacao = '';
+
+      if (hora >= 6 && hora < 12) {
+        saudacao = 'Bom dia!';
+      } else if (hora >= 12 && hora < 18) {
+        saudacao = 'Boa tarde!';
+      } else if (hora >= 18 && hora < 24) {
+        saudacao = 'Boa noite!';
+      } else {
+        saudacao = 'Boa madrugada!';
+      }
+
+      mensagem.textContent = saudacao;
+    }
+  </script>
+
+</body>
+</html>
